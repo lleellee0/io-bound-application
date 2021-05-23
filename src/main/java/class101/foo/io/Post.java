@@ -3,6 +3,7 @@ package class101.foo.io;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.function.Function;
 
 @Data
 @Entity(name = "post")
