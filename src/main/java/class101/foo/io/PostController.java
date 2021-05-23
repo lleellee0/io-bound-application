@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class PostController {
+public class PostController { 
 
     private static Integer PAGE_SIZE = 20;
     @Autowired
