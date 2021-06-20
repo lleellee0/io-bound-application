@@ -15,6 +15,12 @@ public class PostController {
     @Autowired
     PostRepository postRepository;
 
+
+    @GetMapping("/test")
+    public Post test(){
+        return new Post();
+    }
+//    docker build -t chkchk610/spring-boot-io-application .
     // 1. 글을 작성한다.
     @PostMapping("/post")
     public Post createPost(@RequestBody Post post) {
