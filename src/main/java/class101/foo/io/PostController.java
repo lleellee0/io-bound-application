@@ -18,7 +18,9 @@ public class PostController {
 
     @GetMapping("/test")
     public Post test(){
-        return new Post();
+        Post p = new Post();
+        p.setId(1l);
+        return p;
     }
 //    docker build -t chkchk610/spring-boot-io-application .
     // 1. 글을 작성한다.
