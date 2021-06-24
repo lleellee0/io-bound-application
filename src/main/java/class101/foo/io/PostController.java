@@ -9,13 +9,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class PostController {
+public class PostController { 
 
     private static Integer PAGE_SIZE = 20;
-
     @Autowired
     PostRepository postRepository;
 
+
+    @GetMapping("/test")
+    public Post test(){
+        Post p = new Post();
+        p.setId(34l);
+        return p;
+    }
+//    docker build -t chkchk610/spring-boot-io-application .
     // 1. 글을 작성한다.
     @PostMapping("/post")
     public Post createPost(@RequestBody Post post) {
@@ -30,6 +37,7 @@ public class PostController {
                 PageRequest.of(page -1 , PAGE_SIZE, Sort.by("id").descending())
         );
     }
+
     // 3. 글 번호로 조회
     @GetMapping("/post/{id}")
     public Post getPostById(@PathVariable("id") Long id){
