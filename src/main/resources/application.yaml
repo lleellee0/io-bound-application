@@ -5,7 +5,7 @@ spring:
     username: postgresql
     password: postgrespassword
   jpa:
-    show-sql: true
+    show-sql: false # jpa query 로그 안남김
     hibernate:
       dialect: org.hibernate.dialect.PostgreSQLDialect
       ddl-auto: update

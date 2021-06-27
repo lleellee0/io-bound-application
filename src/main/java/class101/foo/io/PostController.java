@@ -23,6 +23,9 @@ public class PostController {
     @Autowired
     ObjectMapper objectMapper;
 
+    @Autowired
+    PostCacheService postCacheService;
+
     @GetMapping("/test")
     public Post test(){
         Post p = new Post();
@@ -41,9 +44,13 @@ public class PostController {
     // 2-2 글 목록을 페이징하여 반환
     @GetMapping("/posts")
     public Page<Post> getPostList(@RequestParam(defaultValue = "1") Integer page) {
-        return postRepository.findAll(
-                PageRequest.of(page-1,PAGE_SIZE, Sort.by("id").descending())
-        );
+        if(page.equals(1)){
+            return postCacheService.getFirstPostPage();
+        }else{
+            return postRepository.findAll(
+                    PageRequest.of(page-1,PAGE_SIZE, Sort.by("id").descending())
+            );
+        }
     }
 
 
