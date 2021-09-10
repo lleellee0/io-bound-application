@@ -30,8 +30,12 @@ public class PostController {
         );
     }
     
-
     // 3. 글 번호로 조회
+    @GetMapping("/post/{id}")
+    public Post getPostById(@PathVariable("id") Long id)
+    {
+        return postRepository.findById(id).get();
+    }
     
     // 4. 글 내용으로 검색 -> 해당 내용이 포함된 모든 글
 
