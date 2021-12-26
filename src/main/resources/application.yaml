@@ -1,7 +1,7 @@
 spring:
   datasource:
-#    url: jdbc:postgresql://10.140.0.3:5400/postgresql
-    url: jdbc:postgresql://localhost:5400/postgresql
+    url: jdbc:postgresql://10.140.0.3:5400/postgresql
+#    url: jdbc:postgresql://localhost:5400/postgresql
     username: postgres
     password: 303ehd
   jpa:
@@ -10,7 +10,7 @@ spring:
       dialect: org.hibernate.dialect.PostgreSQLDialect
       ddl-auto: update
   rabbitmq:
-    host: localhost
+    host: 10.146.0.2
     username: guest
     password: guest
     port: 5672
