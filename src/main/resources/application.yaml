@@ -4,6 +4,7 @@ spring:
     username: postgresql
     password: postgrespassword
   jpa:
+    database: postgresql
     show-sql: true
     hibernate:
       dialect: org.hibernate.dialect.PostgreSQLDialect
