@@ -33,4 +33,9 @@ public class PostController {
     public Post getPostById(@PathVariable Long id) {
         return postRepository.findById(id).get();
     }
+
+    @GetMapping("/search")
+    public List<Post> getPostById(@RequestParam String content) {
+        return postRepository.findByContentContains(content);
+    }
 }
