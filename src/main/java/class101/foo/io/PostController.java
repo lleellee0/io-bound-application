@@ -33,7 +33,13 @@ public class PostController {
 
     
     // 3. 글 번호로 조회
-    
+    @GetMapping("/post/{id}")
+    public Post getPostById(@PathVariable("id") Long id){
+        return postRepository.findById(id).get();
+        //findById했을떄 타입이 post가 아니어서, .get()을 통해 post이 타입으로 나오게 만들
+    }
+
+
     // 4. 글 내용으로 검색 -> 해당 내용이 포함된 모든 글
 
 }
